@@ -71,16 +71,91 @@ ID : 1000
 
 ### Import account alice metamask
 
-la frase sellima la encontramos en el ejemplo de erc 2O de workshop https://github.com/AlexD10S/ETH-Workshop/blob/fdcbe7624c4db34f1b9c9973f800e5a23c9efaf5/examples/contract-erc20/create-erc20-rpc.ts#L9
 
-semilla : 0xb9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df
+You can find the seed phrase for Alice's account in the ERC-20 workshop example: [ERC-20 Workshop Example](https://github.com/AlexD10S/ETH-Workshop/blob/fdcbe7624c4db34f1b9c9973f800e5a23c9efaf5/examples/contract-erc20/create-erc20-rpc.ts#L9)
+
+Seed Phrase: 0xb9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df
 
 ![Alt text](image-2.png)
 
 
 ![Alt text](image-3.png)
 
-en este punto ya se pueden realizar envio de crypo a otras cuentas 
+At this point, you can send cryptocurrencies to other accounts.
 
 ![Alt text](image-4.png)
 
+### Config parachain on scaffold-eth-2
+
+## Requirements
+
+Before you begin, you need to install the following tools:
+
+- [Node (v18 LTS)](https://nodejs.org/en/download/)
+- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
+- [Git](https://git-scm.com/downloads)
+
+## Quickstart
+
+To get started with Scaffold-ETH 2, follow the steps below:
+
+1. Clone this repo & install dependencies
+
+```
+git clone https://github.com/scaffold-eth/scaffold-eth-2.git
+cd scaffold-eth-2
+yarn install
+```
+
+## add network on hardhat
+
+In the file packages/hardhat/hardhat.config.ts add network local
+```
+polkadotlocal: {
+    url: "http://127.0.0.1:9944",
+    accounts: [deployerPrivateKey],
+},
+```
+
+![add parachian](image-5.png)
+
+Create the .env file from .env.example and configure Alice's private key:
+
+`DEPLOYER_PRIVATE_KEY=b9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df`
+
+![env config](image-6.png)
+
+
+execute `yarn deploy --network polkadotlocal`
+
+![deploy contract](image-7.png)
+
+## add network on nextjs
+
+in the file packages/nextjs/scaffold.config.ts add customn network
+
+```
+export const polkadotlocal = {
+  id: 1000,
+  name: "polkadot EVM",
+  network: "polkadotEVM",
+  nativeCurrency: {
+    symbol: "ETH",
+    name: "Ether",
+    decimals: 18,
+  },
+  rpcUrls: {
+    public: { http: ["http://127.0.0.1:9944"] },
+    default: { http: ["http://127.0.0.1:9944"] },
+  },
+  blockExplorers: {
+    etherscan: { name: "Polkadot EVM scan", url: "https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9944#/explorer" },
+    default: { name: "Polkadot EVM scab", url: "https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9944#/explorer" },
+  },
+} as const satisfies Chain;
+
+```
+
+and modify targetNetwork with the new
+
+![config nextjs](image-8.png)
