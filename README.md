@@ -57,3 +57,30 @@ https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9944#/explorer
 
 And the Relay chain here: https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9900#/explorer 
 
+### Config metamask rpc
+
+Node information parachain
+
+![node information](image-1.png)
+
+RPC : http://127.0.0.1:9944
+ID : 1000
+
+![Config RPC](image.png)
+
+
+### Import account alice metamask
+
+la frase sellima la encontramos en el ejemplo de erc 2O de workshop https://github.com/AlexD10S/ETH-Workshop/blob/fdcbe7624c4db34f1b9c9973f800e5a23c9efaf5/examples/contract-erc20/create-erc20-rpc.ts#L9
+
+semilla : 0xb9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df
+
+![Alt text](image-2.png)
+
+
+![Alt text](image-3.png)
+
+en este punto ya se pueden realizar envio de crypo a otras cuentas 
+
+![Alt text](image-4.png)
+
