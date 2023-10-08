@@ -31,7 +31,7 @@ You can download executables of the Zombienet CLI from [paritytech/zombienet/rel
 
  💡 Tip: If you want the executable to be available system-wide then make sure you place it in one of your `$PATH` directories.
 ```sh
-wget https://github.com/paritytech/zombienet/releases/download/v1.3.30/zombienet-macos
+wget https://github.com/paritytech/zombienet/releases/download/v1.3.69/zombienet-macos
 chmod +x zombienet-macos 
 cp zombienet-macos /usr/local/bin
 ```
