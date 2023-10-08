@@ -61,12 +61,12 @@ And the Relay chain here: https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9900#
 
 Node information parachain
 
-![node information](image-1.png)
+![node information](/imgs/image-1.png)
 
 RPC : http://127.0.0.1:9944
 ID : 1000
 
-![Config RPC](image.png)
+![Config RPC](/imgs/image.png)
 
 
 ### Import account alice metamask
@@ -76,14 +76,14 @@ You can find the seed phrase for Alice's account in the ERC-20 workshop example:
 
 Seed Phrase: 0xb9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df
 
-![Alt text](image-2.png)
+![Alt text](/imgs/image-2.png)
 
 
-![Alt text](image-3.png)
+![Alt text](/imgs/image-3.png)
 
 At this point, you can send cryptocurrencies to other accounts.
 
-![Alt text](image-4.png)
+![Alt text](/imgs/image-4.png)
 
 ### Config parachain on scaffold-eth-2
 
@@ -117,18 +117,18 @@ polkadotlocal: {
 },
 ```
 
-![add parachian](image-5.png)
+![add parachian](/imgs/image-5.png)
 
 Create the .env file from .env.example and configure Alice's private key:
 
 `DEPLOYER_PRIVATE_KEY=b9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df`
 
-![env config](image-6.png)
+![env config](/imgs/image-6.png)
 
 
 execute `yarn deploy --network polkadotlocal`
 
-![deploy contract](image-7.png)
+![deploy contract](/imgs/image-7.png)
 
 ## add network on nextjs
 
@@ -158,4 +158,4 @@ export const polkadotlocal = {
 
 and modify targetNetwork with the new
 
-![config nextjs](image-8.png)
+![config nextjs](/imgs/image-8.png)
